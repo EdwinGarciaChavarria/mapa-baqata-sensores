@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sensores de aire · Vista para diapositiva</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body class="compact">
+<main>
+  <div class="layout">
+    <section class="surface" aria-label="Mapa interactivo">
+      <div class="map-tools" role="group" aria-label="Controles de mapa">
+        <button type="button" class="control" data-mode="flat" aria-pressed="true">Mapa plano</button>
+        <button type="button" class="control" data-mode="globe" aria-pressed="false">Globo giratorio</button>
+        <span class="toolbar-gap"></span>
+        <button type="button" class="control" data-view="world">Mundo</button>
+        <button type="button" class="control" data-view="colombia">Colombia</button>
+        <button type="button" class="control" data-view="bogota">Bogotá</button>
+        <button type="button" class="control" data-view="aburra">Valle de Aburrá</button>
+        <button type="button" class="control" data-view="equator">Ecuador 0°</button>
+        <button type="button" class="control" data-zoom="1" aria-label="Acercar">+</button>
+        <button type="button" class="control" data-zoom="-1" aria-label="Alejar">−</button>
+      </div>
+      <div class="map-body"><svg id="map" tabindex="0" aria-label="Mapa interactivo"></svg><div id="tip" class="tip" hidden></div></div>
+      <div id="legend" class="legend" role="group" aria-label="Mostrar u ocultar sensores"></div>
+      <p class="guide">● Modelo exacto &nbsp; ◌ Marca o variante relacionada.</p>
+    </section>
+    <aside class="surface compact-panel" aria-label="Resultados del sensor">
+      <label class="place-picker" for="place-picker">
+        <span>Ubicaciób</span>
+        <select id="place-picker"></select>
+      </label>
+      <section class="detail" id="detail" aria-live="polite"></section>
+    </aside>
+  </div>
+</main>
+<script src="bibliotecas.js"></script>
+<script src="cartografia.js"></script>
+<script src="datos.js"></script>
+<script src="mapa.js"></script>
+</body>
+</html>
